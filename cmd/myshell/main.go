@@ -18,12 +18,9 @@ func main() {
 		if strings.HasPrefix(command, "exit") {
 			var exitCode int
 
-			_, err := fmt.Sscanf(command, "exit %d", &exitCode)
-			if err == nil {
-				os.Exit(exitCode)
-			}
+			fmt.Sscanf(command, "exit %d", &exitCode)
 
-			os.Exit(0)
+			os.Exit(exitCode)
 		}
 
 		fmt.Printf("%s: command not found\n", command)
